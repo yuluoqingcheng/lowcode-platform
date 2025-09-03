@@ -24,9 +24,9 @@ spring:
   # Redis配置
   data:
     redis:
-      host: localhost
+      host: 192.168.1.10
       port: 6379
-      password:
+      password: redis_4s8Axx
       database: 0
       timeout: 5000
       lettuce:
@@ -41,22 +41,22 @@ spring:
     time-zone: GMT+8
     default-property-inclusion: non_null
 
-# MyBatis Plus配置
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true
-    cache-enabled: false
-    call-setters-on-nulls: true
-    jdbc-type-for-null: 'null'
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    db-config:
-      id-type: ASSIGN_ID
-      logic-delete-field: deleted
-      logic-delete-value: 1
-      logic-not-delete-value: 0
-    banner: false
-  mapper-locations: classpath*:/mapper/**/*.xml
+# MyBatis Plus配置 - 临时禁用以解决兼容性问题
+# mybatis-plus:
+#   configuration:
+#     map-underscore-to-camel-case: true
+#     cache-enabled: false
+#     call-setters-on-nulls: true
+#     jdbc-type-for-null: 'null'
+#     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#   global-config:
+#     db-config:
+#       id-type: ASSIGN_ID
+#       logic-delete-field: deleted
+#       logic-delete-value: 1
+#       logic-not-delete-value: 0
+#     banner: false
+#   mapper-locations: classpath*:/mapper/**/*.xml
 
 # Knife4j配置
 knife4j:

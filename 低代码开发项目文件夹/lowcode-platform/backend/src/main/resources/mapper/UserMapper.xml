@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- UserMapper.xml 临时禁用
+     此文件已被临时注释以避免 MyBatis Plus 兼容性问题
+     等兼容性问题解决后将恢复此映射文件的功能
+-->
+<!--
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lowcode.mapper.UserMapper">
     
@@ -29,3 +34,4 @@
     </update>
     
 </mapper>
+-->

@@ -13,18 +13,19 @@ import java.time.LocalDateTime;
 
 /**
  * MyBatis Plus配置类
+ * 由于Spring Boot 3.x兼容性问题，临时禁用
  *
  * @author 低代码平台
  * @since 2024-01-01
  */
 @Slf4j
-@Configuration
+// @Configuration // 临时禁用配置类
 public class MybatisPlusConfig {
 
     /**
      * 分页插件配置
      */
-    @Bean
+    // @Bean // 临时禁用Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
@@ -34,7 +35,7 @@ public class MybatisPlusConfig {
     /**
      * 自动填充处理器
      */
-    @Bean
+    // @Bean // 临时禁用Bean
     public MetaObjectHandler metaObjectHandler() {
         return new MetaObjectHandler() {
             @Override

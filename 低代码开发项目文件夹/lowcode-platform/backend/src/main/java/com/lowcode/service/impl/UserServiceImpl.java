@@ -1,56 +1,12 @@
 package com.lowcode.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lowcode.entity.User;
-import com.lowcode.mapper.UserMapper;
-import com.lowcode.service.UserService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+// UserServiceImpl 临时禁用
+// 此文件已被临时注释以避免 UserMapper 依赖问题
+// 等数据库配置完成后将恢复此服务的功能
 
-/**
- * 用户服务实现类
- *
- * @author 低代码平台
- * @since 2024-01-01
+/*
+ * 原 UserServiceImpl 内容已被注释
+ * 包含用户CRUD操作、查询、更新等功能
+ * 依赖 UserMapper 数据访问层
+ * 将在数据库配置完成后恢复
  */
-@Service
-@RequiredArgsConstructor
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
-
-    private final UserMapper userMapper;
-
-    @Override
-    public User getByUsername(String username) {
-        return userMapper.selectByUsername(username);
-    }
-
-    @Override
-    public User getByEmail(String email) {
-        return userMapper.selectByEmail(email);
-    }
-
-    @Override
-    public User getByPhone(String phone) {
-        return userMapper.selectByPhone(phone);
-    }
-
-    @Override
-    public boolean existsByUsername(String username) {
-        LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(User::getUsername, username);
-        return this.count(wrapper) > 0;
-    }
-
-    @Override
-    public boolean existsByEmail(String email) {
-        LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(User::getEmail, email);
-        return this.count(wrapper) > 0;
-    }
-
-    @Override
-    public void updateLastLogin(Long userId, String loginIp) {
-        userMapper.updateLastLogin(userId, loginIp);
-    }
-}

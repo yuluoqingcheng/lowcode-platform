@@ -28,4 +28,7 @@ public class LoginRequest {
 
     @Schema(description = "记住我", example = "false")
     private Boolean rememberMe = false;
+    
+    @Schema(description = "登录IP地址", example = "127.0.0.1")
+    private String loginIp;
 }

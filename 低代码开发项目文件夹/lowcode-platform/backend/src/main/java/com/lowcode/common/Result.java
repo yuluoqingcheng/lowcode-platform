@@ -81,6 +81,18 @@ public class Result<T> {
     }
     
     /**
+     * 失败响应带错误码和错误详情
+     */
+    public static <T> Result<T> error(Integer code, String message, T data) {
+        Result<T> result = new Result<>();
+        result.setCode(code);
+        result.setMessage(message);
+        result.setData(data);
+        result.setTimestamp(System.currentTimeMillis());
+        return result;
+    }
+    
+    /**
      * 判断是否成功
      */
     public boolean isSuccess() {

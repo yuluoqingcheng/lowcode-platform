@@ -45,6 +45,27 @@ public class JwtUtil {
     }
     
     /**
+     * 生成刷新Token
+     *
+     * @param userId 用户ID
+     * @param username 用户名
+     * @return JWT Token
+     */
+    public String generateRefreshToken(Long userId, String username) {
+        // 刷新令牌有效期更长，通常是访问令牌的2倍
+        Date expireDate = new Date(System.currentTimeMillis() + expire * 2 * 1000);
+        
+        return JWT.create()
+                .withSubject(username)
+                .withClaim("userId", userId)
+                .withClaim("username", username)
+                .withClaim("type", "refresh")
+                .withIssuedAt(new Date())
+                .withExpiresAt(expireDate)
+                .sign(Algorithm.HMAC256(secret));
+    }
+    
+    /**
      * 验证Token
      *
      * @param token JWT Token
@@ -77,6 +98,16 @@ public class JwtUtil {
     }
     
     /**
+     * 从Token获取用户ID
+     *
+     * @param token JWT Token
+     * @return 用户ID
+     */
+    public Long getUserIdFromToken(String token) {
+        return getUserId(token);
+    }
+    
+    /**
      * 获取Token中的用户名
      *
      * @param token JWT Token
@@ -92,6 +123,16 @@ public class JwtUtil {
     }
     
     /**
+     * 从Token获取用户名
+     *
+     * @param token JWT Token
+     * @return 用户名
+     */
+    public String getUsernameFromToken(String token) {
+        return getUsername(token);
+    }
+    
+    /**
      * 获取Token过期时间
      *
      * @param token JWT Token
@@ -104,6 +145,17 @@ public class JwtUtil {
         } catch (JWTDecodeException e) {
             return null;
         }
+    }
+    
+    /**
+     * 从Token获取过期时间戳
+     *
+     * @param token JWT Token
+     * @return 过期时间戳（秒）
+     */
+    public Long getExpirationFromToken(String token) {
+        Date expiration = getExpiration(token);
+        return expiration != null ? expiration.getTime() / 1000 : null;
     }
     
     /**
