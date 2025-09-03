@@ -1,0 +1,187 @@
+# ====================
+# 通用忽略文件
+# ====================
+
+# 操作系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE和编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+.factorypath
+.springBeans
+.sts4-cache/
+*.iml
+*.ipr
+*.iws
+
+# ====================
+# Node.js 前端相关
+# ====================
+
+# 依赖目录
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 构建输出
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist/
+
+# 缓存文件
+.npm
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.cache/
+.temp/
+
+# 环境变量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+
+# ====================
+# Java 后端相关
+# ====================
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Java 编译文件
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# JVM 崩溃日志
+hs_err_pid*
+
+# Spring Boot
+application-*.yml
+application-*.yaml
+application-*.properties
+
+# ====================
+# 数据库相关
+# ====================
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 数据库备份
+*.sql.backup
+*.dump
+
+# ====================
+# 开发和测试文件
+# ====================
+
+# 测试覆盖率报告
+coverage/
+*.lcov
+.nyc_output/
+
+# 测试结果
+test-results/
+junit.xml
+
+# 临时文件
+*.tmp
+*.temp
+.temp/
+.tmp/
+
+# 压缩文件
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ====================
+# 项目特定忽略
+# ====================
+
+# 自动生成的代码
+generated/
+auto-generated/
+
+# 配置文件备份
+*.conf.backup
+*.config.backup
+
+# 上传文件目录
+uploads/
+files/
+
+# 文档构建
+docs/_build/
+
+# 本地配置文件
+local.properties
+config/local/
+
+# ====================
+# 其他
+# ====================
+
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# 系统文件
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*

@@ -1,0 +1,29 @@
+{
+  "name": "lowcode-platform",
+  "version": "1.0.0",
+  "description": "低代码开发平台 - 可视化应用开发工具",
+  "type": "module",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "setup": "cd frontend && npm install && cd ../backend && mvn clean install",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && mvn spring-boot:run",
+    "lint": "cd frontend && npm run lint",
+    "format": "cd frontend && npm run format"
+  },
+  "keywords": [
+    "lowcode",
+    "visual-editor",
+    "vue3",
+    "drag-drop",
+    "code-generator"
+  ],
+  "author": "雨落倾城",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
